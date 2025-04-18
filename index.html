@@ -1,221 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>ROGER</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .glow-bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 50% 20%, rgba(0, 255, 255, 0.1), transparent 60%),
-                  radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.1), transparent 60%);
-      z-index: 0;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 255, 255, 0.1);
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-      backdrop-filter: blur(15px);
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-      animation: float 4s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .card img {
-      width: 180px;
-      border-radius: 20px;
-      border: 3px solid gold;
-      margin-bottom: 20px;
-      box-shadow: 0 0 20px gold;
-    }
-    h1 {
-      font-size: 42px;
-      color: gold;
-      margin-bottom: 10px;
-      text-shadow: 0 0 10px gold;
-    }
-    h2 {
-      font-size: 20px;
-      color: #aaa;
-      margin-bottom: 30px;
-    }
-    .links {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    .link-item {
-      text-align: center;
-    }
-    .link-item a {
-      font-size: 26px;
-      color: gold;
-      background: #ffaa0033;
-      padding: 15px;
-      border-radius: 50%;
-      border: 1px solid #ffaa00aa;
-      transition: 0.3s ease;
-      text-shadow: 0 0 10px gold;
-      box-shadow: 0 0 10px #ffaa0044;
-      display: inline-block;
-    }
-    .link-item a:hover {
-      background: #ffaa0066;
-      transform: scale(1.2);
-      box-shadow: 0 0 20px gold;
-    }
-    .link-item p {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #ccc;
-    }
-    .telegram-channel a {
-      background: #0088cc !important;
-      color: white !important;
-      border: none !important;
-      box-shadow: 0 0 10px #0088cc !important;
-    }
-    .telegram-channel a:hover {
-      box-shadow: 0 0 20px #00bfff !important;
-    }
-    .instagram-icon a {
-      color: red !important;
-      box-shadow: 0 0 10px red !important;
-    }
-    .instagram-icon a:hover {
-      box-shadow: 0 0 20px red !important;
-    }
-
-    /* INTRO STYLE */
-    .intro-container {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-    #intro-text {
-      font-size: 55px;
-      font-weight: bold;
-      color: gold;
-      font-family: 'Segoe UI', sans-serif;
-      text-shadow: 0 0 10px transparent;
-      transition: all 0.5s ease;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ألوان متحركة متناثرة</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+        
+        .color-particle {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            animation: moveParticle 8s infinite ease-in-out;
+        }
+        
+        @keyframes moveParticle {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(100px, 50px);
+            }
+            50% {
+                transform: translate(-80px, 100px);
+            }
+            75% {
+                transform: translate(120px, -60px);
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- INTRO -->
-  <div id="intro" class="intro-container">
-    <h1 id="intro-text"></h1>
-  </div>
-
-  <div class="glow-bg"></div>
-  <div class="card">
-    <img src="https://raw.githubusercontent.com/R0GER1/ROGER-/main/IMG_20250414_181919_520.jpg" alt="ROGER Image" />
-    <h1>ROGER</h1>
-    <h2>اقوي مطور ملفات عبر التاريخ</h2>
-    <div class="links">
-      <div class="link-item telegram-channel">
-        <a href="https://t.me/ROGER_4T" target="_blank" title="Telegram Channel">
-          <i class="fas fa-bullhorn"></i>
-        </a>
-        <p>Telegram Channel</p>
-      </div>
-      <div class="link-item">
-        <a href="https://t.me/VIP_heitam" target="_blank" title="Telegram Personal">
-          <i class="fab fa-telegram-plane"></i>
-        </a>
-        <p>Telegram Personal</p>
-      </div>
-      <div class="link-item instagram-icon">
-        <a href="https://www.instagram.com/he_itam11?igsh=aHcwaGJmNGd6aTMw" target="_blank" title="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <p>Instagram</p>
-      </div>
-    </div>
-  </div>
-
-<script>
-  const introText = document.getElementById("intro-text");
-
-  // أول سطر: إنجليزي بحروف متتابعة
-  const english = "ROGER";
-  [...english].forEach((char, index) => {
-    const span = document.createElement("span");
-    span.textContent = char;
-    span.style.opacity = 0;
-    span.style.display = "inline-block";
-    span.style.transition = "opacity 0.3s ease, transform 0.3s ease";
-    span.style.transform = "scale(0.8)";
-    introText.appendChild(span);
-
-    setTimeout(() => {
-      span.style.opacity = 1;
-      span.style.transform = "scale(1.2)";
-      setTimeout(() => {
-        span.style.transform = "scale(1)";
-      }, 150);
-    }, 100 * index);
-  });
-
-  // سطر العربي يظهر بعد الإنجليزي
-  setTimeout(() => {
-    const arabicLine = document.createElement("div");
-    arabicLine.textContent = "أهلاً بك في عالم روجر ..";
-    arabicLine.style.direction = "rtl";
-    arabicLine.style.marginTop = "20px";
-    arabicLine.style.fontSize = "28px";
-    arabicLine.style.opacity = 0;
-    arabicLine.style.transition = "opacity 0.8s ease";
-    introText.appendChild(arabicLine);
-
-    setTimeout(() => {
-      arabicLine.style.opacity = 1;
-    }, 200);
-  }, 100 * english.length + 300);
-
-  // تأثير نهائي
-  setTimeout(() => {
-    introText.style.textShadow = "0 0 30px gold";
-    introText.style.transform = "scale(1.05)";
-  }, 100 * english.length + 1000);
-
-  // إخفاء الانترو
-  setTimeout(() => {
-    document.getElementById('intro').style.display = 'none';
-  }, 5000);
-</script>
-
+    <script>
+        // إنشاء جسيمات ملونة عشوائية
+        function createParticles() {
+            const colors = ['#FF0000', '#0000FF']; // أحمر وأزرق
+            const particlesCount = 20;
+            
+            for (let i = 0; i < particlesCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'color-particle';
+                
+                // لون عشوائي (أحمر أو أزرق)
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = randomColor;
+                
+                // حجم عشوائي
+                const randomSize = 20 + Math.random() * 30;
+                particle.style.width = ${randomSize}px;
+                particle.style.height = ${randomSize}px;
+                
+                // موقع عشوائي
+                particle.style.left = ${Math.random() * 100}vw;
+                particle.style.top = ${Math.random() * 100}vh;
+                
+                // تأخير عشوائي للحركة
+                particle.style.animationDelay = ${Math.random() * 5}s;
+                
+                document.body.appendChild(particle);
+            }
+        }
+        
+        // إنشاء الجسيمات عند تحميل الصفحة
+        window.onload = createParticles;
+    </script>
 </body>
 </html>
